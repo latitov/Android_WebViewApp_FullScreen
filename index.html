@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<title>HTML Tutorial</title>
+<body>
+
+<h1 id="h1">This is a heading</h1>
+<p>This is a paragraph.</p>
+
+<input type="button" value="Say hello" onClick="showAndroidToast()" />
+
+<script type="text/javascript">
+
+// Copyright (c) 2019 Leonid Titov, Mentions Highly Appreciated
+
+    var h1 = document.getElementById("h1");
+    var h1_sw = 0;
+    function showAndroidToast() {
+        Android.showToast("Hello-1 from JS");
+    }
+    function f1() {
+        if (h1_sw) {
+            h1_sw = 0;
+            h1.style.color = "#000";
+        }
+        else {
+            h1_sw = 1;
+            h1.style.color = "#f00";
+        }
+        return "Hello-2";
+    }
+</script>
+
+</body>
+</html>
