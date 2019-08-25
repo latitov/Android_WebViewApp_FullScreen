@@ -6,7 +6,7 @@ import android.widget.Toast
 
 // Copyright (c) 2019 Leonid Titov, Mentions Highly Appreciated
 
-class WebAppInterface(private val mContext: Context, val mAct: MainActivity) {
+class WebAppInterface(private val mContext: Context) {
     /** Show a toast from the web page  */
     @JavascriptInterface
     fun showToast(toast: String) {
@@ -14,8 +14,8 @@ class WebAppInterface(private val mContext: Context, val mAct: MainActivity) {
         //  mAct.mWebView           // works
         //  MainActivity.mWebView2  // works
 
-        mAct.mWebView?.post {
-            mAct.mWebView?.evaluateJavascript("f1();") { retv ->
+        (mContext as MainActivity).mWebView?.post {
+            (mContext as MainActivity).mWebView?.evaluateJavascript("f1();") { retv ->
                 Toast.makeText(mContext, retv, Toast.LENGTH_LONG).show()
             }
         }
