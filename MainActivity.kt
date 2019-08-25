@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         WV1.settings.javaScriptEnabled = true
         WV1.loadUrl("file:///android_asset/index.html")
 
-        var mWAI = WebAppInterface(this, this)
+        var mWAI = WebAppInterface(this)
         WV1.addJavascriptInterface(mWAI, "Android")
     }
 
